@@ -1,0 +1,33 @@
+<!-- Static skeleton for Netlify's build-time form detection. Not served as a page.
+     Field names must stay in sync with the React form in src/routes/index.tsx. -->
+<html>
+  <body>
+    <form name="research-inquiry" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="research-inquiry" />
+      <input name="name" />
+      <input name="organization" />
+      <input name="email" type="email" />
+      <select name="interest">
+        <option value="research-collaboration">Research Collaboration</option>
+        <option value="tbi-research">TBI Research</option>
+        <option value="cognitive-aging">Cognitive Aging &amp; MCI</option>
+        <option value="alzheimers-research">Alzheimer's &amp; Dementia Research</option>
+        <option value="technology-partnerships">Technology Partnerships</option>
+        <option value="academic-collaboration">Academic Collaboration</option>
+        <option value="media-speaking">Media &amp; Speaking</option>
+        <option value="other">Other</option>
+      </select>
+      <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
+    <form name="shes-a-flame-interest" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="shes-a-flame-interest" />
+      <input name="inquiry-type" />
+      <input name="name" />
+      <input name="email" type="email" />
+      <input name="organization" />
+      <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
+  </body>
+</html>
