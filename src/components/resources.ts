@@ -34,7 +34,7 @@ export const ACCOMMODATION_PLANNING_FORM: Resource = {
     href: '/resources/disability-inclusive-clinical-research-accommodation-planning-form.pdf',
     downloadName: 'Disability-Inclusive-Clinical-Research-Accommodation-Planning-Form.pdf',
     pages: 2,
-    size: '36 KB',
+    size: '76 KB',
   },
 }
 
@@ -80,7 +80,22 @@ export const CO_DESIGN_GUIDE: Resource = {
   },
 }
 
+export const DISABILITY_ACCESSIBILITY_TOOLKIT: Resource = {
+  slug: 'disability-inclusive-clinical-research-accessibility-toolkit',
+  title: 'NeuroViu Disability-Inclusive Clinical Research Accessibility Toolkit (v1.0)',
+  kind: 'Accessibility toolkit',
+  summary:
+    'A cross-disability research toolkit with accessibility planning checklists, accommodation guidance, accessible communication practices, participant autonomy procedures, and continuous-improvement resources.',
+  pdf: {
+    href: '/resources/disability-inclusive-clinical-research-accessibility-toolkit.pdf',
+    downloadName: 'NeuroViu-Disability-Inclusive-Clinical-Research-Accessibility-Toolkit-v1.pdf',
+    pages: 11,
+    size: '191 KB',
+  },
+}
+
 export const RESOURCES: Resource[] = [
+  DISABILITY_ACCESSIBILITY_TOOLKIT,
   ACCESSIBLE_VR_TOOLKIT,
   ACCOMMODATION_PLANNING_FORM,
   PAUSE_STOP_PROCEDURE,
