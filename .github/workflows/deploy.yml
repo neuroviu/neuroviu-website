@@ -19,6 +19,22 @@ jobs:
         with:
           node-version: '22'
           cache: npm
+      - name: Install PDF-UA-1 validated NeuroViu resources
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error \
+            "https://raw.githubusercontent.com/neuroviu/openbrain/fd7386a699ec42f5aa823338b5b09da78926c896/NeuroViu_PDFUA_Cloud_Setup/pdfua-inputs/NeuroViu_PDFUA_Remediation_Candidates.zip" \
+            -o /tmp/neuroviu-validated-pdfs.zip
+          mkdir -p /tmp/neuroviu-validated-pdfs public/resources
+          unzip -oq /tmp/neuroviu-validated-pdfs.zip -d /tmp/neuroviu-validated-pdfs
+          form="/tmp/neuroviu-validated-pdfs/NeuroViu_Accommodation_Planning_Form_PDFUA_Remediated.pdf"
+          toolkit="/tmp/neuroviu-validated-pdfs/NeuroViu_Toolkit_PDFUA_Remediated.pdf"
+          test -s "$form"
+          test -s "$toolkit"
+          cp "$form" public/resources/disability-inclusive-clinical-research-accommodation-planning-form.pdf
+          cp "$toolkit" public/resources/disability-inclusive-clinical-research-accessibility-toolkit.pdf
+          file public/resources/*accessibility-toolkit.pdf public/resources/*accommodation-planning-form.pdf
       - run: npm ci
       - run: npm run build
       - uses: actions/configure-pages@v5
