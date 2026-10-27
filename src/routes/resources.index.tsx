@@ -37,13 +37,13 @@ function ResourcesPage() {
                 <article className="card card-lift resource-card">
                   <span className="mono-label" style={{ color: 'var(--indigo-soft)' }}>{r.kind}</span>
                   <h2 className="h-card" style={{ marginTop: 10 }}>
-                    <a href={`/resources/${r.slug}`} className="resource-card-link">{r.title}</a>
+                    <a href={r.slug === "disability-inclusive-clinical-research-accessibility-toolkit" || r.slug === "disability-inclusive-clinical-research-accommodation-planning-form" ? r.pdf.href : `/resources/${r.slug}`} className="resource-card-link">{r.title}</a>
                   </h2>
                   <p className="body-muted" style={{ fontSize: 15.5, marginTop: 12 }}>{r.summary}</p>
                   <div className="resource-card-foot">
                     <span className="mono-label">PDF · {r.pdf.pages} pages · {r.pdf.size}</span>
                     <span className="link-arrow" aria-hidden="true">
-                      View resource
+                      {r.slug === "disability-inclusive-clinical-research-accessibility-toolkit" || r.slug === "disability-inclusive-clinical-research-accommodation-planning-form" ? "View PDF" : "View resource"}
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
                     </span>
                   </div>
