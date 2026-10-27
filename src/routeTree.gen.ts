@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as ShesAFlameRouteImport } from './routes/shes-a-flame'
 import { Route as ArtResearchRouteImport } from './routes/art-research'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ResourcesDisabilityInclusiveClinicalResearchAccessibilityToolkitRouteImport } from './routes/resources.disability-inclusive-clinical-research-accessibility-toolkit'
 import { Route as ResourcesIndexRouteImport } from './routes/resources.index'
 import { Route as ResourcesParticipantPauseStopModificationProcedureRouteImport } from './routes/resources.participant-pause-stop-modification-procedure'
 import { Route as ResourcesDisabilityInclusiveResearchCoDesignGuideRouteImport } from './routes/resources.disability-inclusive-research-co-design-guide'
@@ -32,6 +33,11 @@ const ArtResearchRoute = ArtResearchRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesDisabilityInclusiveClinicalResearchAccessibilityToolkitRoute = ResourcesDisabilityInclusiveClinicalResearchAccessibilityToolkitRouteImport.update({
+  id: '/resources/disability-inclusive-clinical-research-accessibility-toolkit',
+  path: '/resources/disability-inclusive-clinical-research-accessibility-toolkit',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResourcesIndexRoute = ResourcesIndexRouteImport.update({
@@ -73,6 +79,7 @@ const ResourcesAccessibleVrClinicalResearchToolkitRoute =
   } as any)
 
 export interface FileRoutesByFullPath {
+  '/resources/disability-inclusive-clinical-research-accessibility-toolkit': typeof ResourcesDisabilityInclusiveClinicalResearchAccessibilityToolkitRoute
   '/': typeof IndexRoute
   '/art-research': typeof ArtResearchRoute
   '/shes-a-flame': typeof ShesAFlameRoute
@@ -84,6 +91,7 @@ export interface FileRoutesByFullPath {
   '/resources/': typeof ResourcesIndexRoute
 }
 export interface FileRoutesByTo {
+  '/resources/disability-inclusive-clinical-research-accessibility-toolkit': typeof ResourcesDisabilityInclusiveClinicalResearchAccessibilityToolkitRoute
   '/': typeof IndexRoute
   '/art-research': typeof ArtResearchRoute
   '/shes-a-flame': typeof ShesAFlameRoute
@@ -95,6 +103,7 @@ export interface FileRoutesByTo {
   '/resources': typeof ResourcesIndexRoute
 }
 export interface FileRoutesById {
+  '/resources/disability-inclusive-clinical-research-accessibility-toolkit': typeof ResourcesDisabilityInclusiveClinicalResearchAccessibilityToolkitRoute
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/art-research': typeof ArtResearchRoute
@@ -109,6 +118,7 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
+    | '/resources/disability-inclusive-clinical-research-accessibility-toolkit'
     | '/'
     | '/art-research'
     | '/shes-a-flame'
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
     | '/resources/'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/resources/disability-inclusive-clinical-research-accessibility-toolkit'
     | '/'
     | '/art-research'
     | '/shes-a-flame'
@@ -130,6 +141,7 @@ export interface FileRouteTypes {
     | '/resources/participant-pause-stop-modification-procedure'
     | '/resources'
   id:
+    | '/resources/disability-inclusive-clinical-research-accessibility-toolkit'
     | '__root__'
     | '/'
     | '/art-research'
@@ -143,6 +155,7 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  ResourcesDisabilityInclusiveClinicalResearchAccessibilityToolkitRoute: typeof ResourcesDisabilityInclusiveClinicalResearchAccessibilityToolkitRoute
   IndexRoute: typeof IndexRoute
   ArtResearchRoute: typeof ArtResearchRoute
   ShesAFlameRoute: typeof ShesAFlameRoute
@@ -156,6 +169,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/resources/disability-inclusive-clinical-research-accessibility-toolkit': {
+      id: '/resources/disability-inclusive-clinical-research-accessibility-toolkit'
+      path: '/resources/disability-inclusive-clinical-research-accessibility-toolkit'
+      fullPath: '/resources/disability-inclusive-clinical-research-accessibility-toolkit'
+      preLoaderRoute: typeof ResourcesDisabilityInclusiveClinicalResearchAccessibilityToolkitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/shes-a-flame': {
       id: '/shes-a-flame'
       path: '/shes-a-flame'
@@ -223,6 +243,7 @@ declare module '@tanstack/react-router' {
 }
 
 const rootRouteChildren: RootRouteChildren = {
+  ResourcesDisabilityInclusiveClinicalResearchAccessibilityToolkitRoute: ResourcesDisabilityInclusiveClinicalResearchAccessibilityToolkitRoute,
   IndexRoute: IndexRoute,
   ArtResearchRoute: ArtResearchRoute,
   ShesAFlameRoute: ShesAFlameRoute,
