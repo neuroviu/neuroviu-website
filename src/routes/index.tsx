@@ -1886,6 +1886,22 @@ function NeuroViuHome() {
               sub="One workflow from neural signal to analysis."
             />
 
+            <div data-reveal style={{ marginTop: 30, display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 16 }}>
+              <a
+                href="https://neuroviu-neurosim.pages.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '15px 24px', borderRadius: 999, background: '#3b3183', color: '#fff', fontWeight: 600, textDecoration: 'none' }}
+                aria-label="Launch NeuroSim interactive 3D neuroscience simulator in a new tab"
+              >
+                Launch NeuroSim <Icon name="external" size={17} />
+              </a>
+              <span className="body-dim" style={{ fontSize: 13 }}>
+                Explore an interactive 3D brain model · Opens in a new tab
+              </span>
+            </div>
+
             <ol className="workflow-grid" style={{ marginTop: 52 }}>
               {WORKFLOW.map((w, i) => (
                 <li key={w.n} className="card card-lift" style={{ ...rd((i % 3) * 90), padding: '28px 26px' }} data-reveal>
